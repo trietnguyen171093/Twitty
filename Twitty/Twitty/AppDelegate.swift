@@ -12,9 +12,10 @@ import BDBOAuth1Manager
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
-
+  var vc = ViewController()
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    print("something")
     // Override point for customization after application launch.
     return true
   }
@@ -55,7 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
           _ = TwitterClient.shareInstance?.getUserInfo()
         
-          _ = TwitterClient.shareInstance?.getHomeLine()
+          _ = TwitterClient.shareInstance?.getHomeTimeLine()
+        
+          _ = TwitterClient.shareInstance?.authenticateSuccess(isSuccess: true)
+      }
+      else{
+        _ = TwitterClient.shareInstance?.authenticateSuccess(isSuccess: true)
       }
 
     }, failure: { (error: Error?) in

@@ -13,18 +13,22 @@
 		226146C01F0693D600974AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226146BF1F0693D600974AAB /* Assets.xcassets */; };
 		226146C31F0693D600974AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226146C11F0693D600974AAB /* LaunchScreen.storyboard */; };
 		226146CB1F089D3400974AAB /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226146CA1F089D3400974AAB /* TwitterClient.swift */; };
+		226146CD1F08ABDE00974AAB /* TwittyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226146CC1F08ABDE00974AAB /* TwittyCell.swift */; };
+		226146CF1F08ADF200974AAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226146CE1F08ADF200974AAB /* HomePageViewController.swift */; };
 		F6F170937DC5F8DBE56D343D /* Pods_Twitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FEC994A4400DA6438BC682 /* Pods_Twitty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		226146B51F0693D600974AAB /* Twitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		226146B81F0693D600974AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		226146B81F0693D600974AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		226146BA1F0693D600974AAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		226146BD1F0693D600974AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		226146BF1F0693D600974AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		226146C21F0693D600974AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226146C41F0693D600974AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		226146CA1F089D3400974AAB /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		226146CA1F089D3400974AAB /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TwitterClient.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		226146CC1F08ABDE00974AAB /* TwittyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwittyCell.swift; sourceTree = "<group>"; };
+		226146CE1F08ADF200974AAB /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		3BE1488FB88252434D6D7024 /* Pods-Twitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitty/Pods-Twitty.debug.xcconfig"; sourceTree = "<group>"; };
 		5DFB22CE05286129BCAACF72 /* Pods-Twitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitty/Pods-Twitty.release.xcconfig"; sourceTree = "<group>"; };
 		C0FEC994A4400DA6438BC682 /* Pods_Twitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				226146B81F0693D600974AAB /* AppDelegate.swift */,
+				226146CE1F08ADF200974AAB /* HomePageViewController.swift */,
+				226146CC1F08ABDE00974AAB /* TwittyCell.swift */,
 				226146BA1F0693D600974AAB /* ViewController.swift */,
 				226146CA1F089D3400974AAB /* TwitterClient.swift */,
 				226146BC1F0693D600974AAB /* Main.storyboard */,
@@ -215,8 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226146CD1F08ABDE00974AAB /* TwittyCell.swift in Sources */,
 				226146BB1F0693D600974AAB /* ViewController.swift in Sources */,
 				226146CB1F089D3400974AAB /* TwitterClient.swift in Sources */,
+				226146CF1F08ADF200974AAB /* HomePageViewController.swift in Sources */,
 				226146B91F0693D600974AAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

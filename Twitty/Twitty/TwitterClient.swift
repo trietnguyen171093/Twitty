@@ -13,7 +13,7 @@ import BDBOAuth1Manager
 let consumeKey = "J2IJOZjGZ8rb28ZKuv8iD7NG1"
 let comsumeSecret = "MgbTQvtFoXbWm4ESAt52QNLo5Ja1Tl0D59Nuqt7fGOd6VRfQUL"
 let baseURL_ = URL(string: "https://api.twitter.com/")
-
+var authenticate_ = false
 class TwitterClient: BDBOAuth1SessionManager {
 
   static var shareInstance = TwitterClient(baseURL: baseURL_, consumerKey: consumeKey, consumerSecret :comsumeSecret)
@@ -24,9 +24,9 @@ class TwitterClient: BDBOAuth1SessionManager {
     _ = get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (_: URLSessionDataTask, response: Any?) in
       if let response = response{
         user = response as! NSDictionary
-        print(user["name"] as! String)
-        print(user["screen_name"] as! String)
-        print(user["profile_image_url_https"] as! String)
+//        print(user["name"] as! String)
+//        print(user["screen_name"] as! String)
+//        print(user["profile_image_url_https"] as! String)
       }
     }, failure: { (task: URLSessionDataTask?, error: Error) in
       print("\(error.localizedDescription)")
@@ -35,16 +35,16 @@ class TwitterClient: BDBOAuth1SessionManager {
     return user
   }
   
-  func getHomeLine() -> [NSDictionary]
+  func getHomeTimeLine() -> [NSDictionary]
   {
-    var homeline = [NSDictionary]()
+    var hometimeline = [NSDictionary]()
     
     _ = get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (_: URLSessionDataTask, response: Any?) in
       if let response = response{
-        homeline = response as! [NSDictionary]
+        hometimeline = response as! [NSDictionary]
         
-        for tweet in homeline {
-          print(tweet["text"] as! String)
+        for tweet in hometimeline {
+//          print(tweet["text"] as! String)
           //                let userType = tweet["user"] as! NSDictionary
           //                print(userType["screen_name"] as! String)
           //                print (userType["description"] as! String)
@@ -55,7 +55,14 @@ class TwitterClient: BDBOAuth1SessionManager {
       print("\(error.localizedDescription)")
     })
   
-    return homeline
+    return hometimeline
+  }
+  
+  func authenticateSuccess(isSuccess: Bool) {
+    authenticate_ = isSuccess
+  }
+  func isAuthenticateSuccess() -> Bool{
+    return authenticate_
   }
 
 }
