@@ -18,6 +18,7 @@ class TimeLine : NSObject{
   let favorite_count : Int?
   let imageURL : String?
   let timecreate: String?
+  let retweetCount: Int?
   
   init(dictionary: NSDictionary) {
     
@@ -29,6 +30,7 @@ class TimeLine : NSObject{
     imageURL = userType["profile_image_url_https"] as? String
     favorite_count = userType["favourites_count"] as? Int
     timecreate = dictionary["created_at"] as? String
+    retweetCount = dictionary["retweet_count"] as? Int
   }
   
   class func TimeLines(array: [NSDictionary]) -> [TimeLine] {

@@ -14,7 +14,7 @@ class HomePageViewController: UIViewController {
 
   
   @IBOutlet weak var tableView: UITableView!
-  var homeTimeLines : [TimeLine]!
+  var homeTimeLines = [TimeLine]()
   var numCell  = 0
   var curCell = 0
   var arrTemp = [NSDictionary]()
@@ -60,7 +60,7 @@ class HomePageViewController: UIViewController {
         print("\(error!.localizedDescription)")
       }
       else {
-        self.homeTimeLines = timeLines
+        self.homeTimeLines = timeLines!
         self.tableView.reloadData()
         self.refreshControl.endRefreshing()
       }
@@ -79,6 +79,15 @@ class HomePageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    let nextVC = segue.destination as! UserTweetViewController
+    let ip = tableView.indexPathForSelectedRow
+    
+    nextVC.hometimeline = self.homeTimeLines[(ip?.row)!]
+  }
+
 
 
 }
