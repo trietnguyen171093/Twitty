@@ -54,9 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       if let response = response{
           print("access token = \(response.token)")
 
-          _ = TwitterClient.shareInstance?.getUserInfo()
+//          _ = TwitterClient.shareInstance?.getUserInfo()
         
-          _ = TwitterClient.shareInstance?.getHomeTimeLine()
+//          _ = TwitterClient.shareInstance?.getHomeTimeLine()
         
           _ = TwitterClient.shareInstance?.authenticateSuccess(isSuccess: true)
       }

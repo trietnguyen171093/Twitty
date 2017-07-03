@@ -142,7 +142,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1Cb-Bo-80x"/>
+                    <navigationItem key="navigationItem" id="1Cb-Bo-80x">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="vY1-Ge-ynX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wsf-Ph-mgO">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="asd:" destination="Vew-5B-pF6" eventType="touchUpInside" id="HtH-kL-9fh"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="UFM-Fr-Q6E" id="f7A-gV-t6p"/>
                     </connections>

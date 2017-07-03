@@ -15,6 +15,7 @@
 		226146CB1F089D3400974AAB /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226146CA1F089D3400974AAB /* TwitterClient.swift */; };
 		226146CD1F08ABDE00974AAB /* TwittyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226146CC1F08ABDE00974AAB /* TwittyCell.swift */; };
 		226146CF1F08ADF200974AAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226146CE1F08ADF200974AAB /* HomePageViewController.swift */; };
+		226146D11F094EA100974AAB /* HomeTimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226146D01F094EA100974AAB /* HomeTimeLine.swift */; };
 		F6F170937DC5F8DBE56D343D /* Pods_Twitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FEC994A4400DA6438BC682 /* Pods_Twitty.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		226146CA1F089D3400974AAB /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TwitterClient.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		226146CC1F08ABDE00974AAB /* TwittyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwittyCell.swift; sourceTree = "<group>"; };
 		226146CE1F08ADF200974AAB /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		226146D01F094EA100974AAB /* HomeTimeLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTimeLine.swift; sourceTree = "<group>"; };
 		3BE1488FB88252434D6D7024 /* Pods-Twitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitty/Pods-Twitty.debug.xcconfig"; sourceTree = "<group>"; };
 		5DFB22CE05286129BCAACF72 /* Pods-Twitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitty/Pods-Twitty.release.xcconfig"; sourceTree = "<group>"; };
 		C0FEC994A4400DA6438BC682 /* Pods_Twitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 				226146B81F0693D600974AAB /* AppDelegate.swift */,
 				226146CE1F08ADF200974AAB /* HomePageViewController.swift */,
 				226146CC1F08ABDE00974AAB /* TwittyCell.swift */,
+				226146D01F094EA100974AAB /* HomeTimeLine.swift */,
 				226146BA1F0693D600974AAB /* ViewController.swift */,
 				226146CA1F089D3400974AAB /* TwitterClient.swift */,
 				226146BC1F0693D600974AAB /* Main.storyboard */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				226146CD1F08ABDE00974AAB /* TwittyCell.swift in Sources */,
+				226146D11F094EA100974AAB /* HomeTimeLine.swift in Sources */,
 				226146BB1F0693D600974AAB /* ViewController.swift in Sources */,
 				226146CB1F089D3400974AAB /* TwitterClient.swift in Sources */,
 				226146CF1F08ADF200974AAB /* HomePageViewController.swift in Sources */,

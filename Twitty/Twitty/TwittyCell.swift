@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AFNetworking
 class TwittyCell: UITableViewCell {
 
   @IBOutlet weak var avatarImage: UIImageView!
@@ -15,7 +15,19 @@ class TwittyCell: UITableViewCell {
   @IBOutlet weak var screennameLabel: UILabel!
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var statuslabel: UILabel!
+  var avatarURL : String?
   
+  var hometimeline : TimeLine!{
+    didSet{
+      nameLabel.text = hometimeline.name
+      screennameLabel.text = hometimeline.screenname
+      statuslabel.text = hometimeline.status
+//      avatarImage.setImageWith(hometimeline.imageURL!)
+      avatarURL = hometimeline.imageURL
+      avatarImage.setImageWith(URL(string: avatarURL!)!)
+    }
+  }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

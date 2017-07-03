@@ -43,18 +43,19 @@ class TwitterClient: BDBOAuth1SessionManager {
       if let response = response{
         hometimeline = response as! [NSDictionary]
         
-        for tweet in hometimeline {
+        _ = TimeLine.TimeLines(array: hometimeline)
+        
+        
+//        for tweet in hometimeline {
 //          print(tweet["text"] as! String)
-          //                let userType = tweet["user"] as! NSDictionary
-          //                print(userType["screen_name"] as! String)
-          //                print (userType["description"] as! String)
-          
-        }
+//          let userType = tweet["user"] as! NSDictionary
+//          print(userType["screen_name"] as! String)
+//          print (userType["description"] as! String)
+//        }
       }
     }, failure: { (task: URLSessionDataTask?, error: Error) in
       print("\(error.localizedDescription)")
     })
-  
     return hometimeline
   }
   
