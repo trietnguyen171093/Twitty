@@ -12,7 +12,7 @@ import BDBOAuth1Manager
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  var vc = ViewController()
+  var storyboard = UIStoryboard(name: "Main", bundle: nil)
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     print("something")
@@ -59,6 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //          _ = TwitterClient.shareInstance?.getHomeTimeLine()
         
           _ = TwitterClient.shareInstance?.authenticateSuccess(isSuccess: true)
+        let vc = self.storyboard.instantiateViewController(withIdentifier: "HomePageID")as UIViewController
+        self.window?.rootViewController = vc
       }
       else{
         _ = TwitterClient.shareInstance?.authenticateSuccess(isSuccess: true)

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class TimeLine : NSObject{
   
   let name : String?
@@ -16,28 +17,29 @@ class TimeLine : NSObject{
   let status : String?
   let favorite_count : Int?
   let imageURL : String?
+  let timecreate: String?
   
   init(dictionary: NSDictionary) {
-    name = dictionary["name"] as? String
-    screenname = dictionary["screen_name"] as? String
-    status = dictionary["description"] as? String
-    imageURL = dictionary["profile_image_url_https"] as? String
-    favorite_count = dictionary["favourites_count"] as? Int
+    
+    status = dictionary["text"] as? String
+    
+    let userType = dictionary["user"] as! NSDictionary
+    name = userType["name"] as? String
+    screenname = userType["screen_name"] as? String
+    imageURL = userType["profile_image_url_https"] as? String
+    favorite_count = userType["favourites_count"] as? Int
+    timecreate = dictionary["created_at"] as? String
   }
   
   class func TimeLines(array: [NSDictionary]) -> [TimeLine] {
-    
+    print("call class")
     var TimeLines = [TimeLine]()
     for dictionary in array {
-      let userType = dictionary["user"] as! NSDictionary
-      let timeline = TimeLine(dictionary: userType)
+      let timeline = TimeLine(dictionary: dictionary)
       TimeLines.append(timeline)
     }
-    homeTimeLines = TimeLines
     return TimeLines
   }
-
-
 }
 
 

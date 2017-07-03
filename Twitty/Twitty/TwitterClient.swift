@@ -24,9 +24,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     _ = get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (_: URLSessionDataTask, response: Any?) in
       if let response = response{
         user = response as! NSDictionary
-//        print(user["name"] as! String)
-//        print(user["screen_name"] as! String)
-//        print(user["profile_image_url_https"] as! String)
+
       }
     }, failure: { (task: URLSessionDataTask?, error: Error) in
       print("\(error.localizedDescription)")
@@ -35,26 +33,22 @@ class TwitterClient: BDBOAuth1SessionManager {
     return user
   }
   
-  func getHomeTimeLine() -> [NSDictionary]
+  func getHomeTimeLine(complete: @escaping ([TimeLine]?, Error?) -> Void) -> [NSDictionary]
   {
+    print("get timeline")
     var hometimeline = [NSDictionary]()
     
     _ = get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (_: URLSessionDataTask, response: Any?) in
+      
       if let response = response{
         hometimeline = response as! [NSDictionary]
         
-        _ = TimeLine.TimeLines(array: hometimeline)
-        
-        
-//        for tweet in hometimeline {
-//          print(tweet["text"] as! String)
-//          let userType = tweet["user"] as! NSDictionary
-//          print(userType["screen_name"] as! String)
-//          print (userType["description"] as! String)
-//        }
+        let abc = TimeLine.TimeLines(array: hometimeline)
+        complete(abc, nil)
       }
     }, failure: { (task: URLSessionDataTask?, error: Error) in
       print("\(error.localizedDescription)")
+      complete(nil, error)
     })
     return hometimeline
   }
