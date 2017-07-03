@@ -50,9 +50,8 @@ class HomePageViewController: UIViewController {
   
   func refreshdata(_ refreshControl: UIRefreshControl)
   {
-    self.homeTimeLines.removeAll()
+//    self.homeTimeLines.removeAll()
     fetchHomeLineData()
-    
   }
   func fetchHomeLineData(){
     arrTemp = (TwitterClient.shareInstance?.getHomeTimeLine{
@@ -97,10 +96,9 @@ extension HomePageViewController: UITableViewDataSource, UITableViewDelegate{
   {
     print("cellatrow \(indexPath.row)")
     let cell = tableView.dequeueReusableCell(withIdentifier: "TwittyCellID", for: indexPath) as! TwittyCell
-    cell.hometimeline = homeTimeLines[indexPath.row]
-    if (indexPath.row > numCell - 5)
+    if (homeTimeLines.count > 0)  // avoid case app crashes because data query is nil
     {
-        // ready fetch new cell
+      cell.hometimeline = homeTimeLines[indexPath.row]
     }
     return cell
     

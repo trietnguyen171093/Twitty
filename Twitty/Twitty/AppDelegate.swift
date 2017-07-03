@@ -59,8 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //          _ = TwitterClient.shareInstance?.getHomeTimeLine()
         
           _ = TwitterClient.shareInstance?.authenticateSuccess(isSuccess: true)
-        let vc = self.storyboard.instantiateViewController(withIdentifier: "HomePageID")as UIViewController
+        
+        let vc = self.storyboard.instantiateViewController(withIdentifier: "HomePageSegue")as! UINavigationController
         self.window?.rootViewController = vc
+        
       }
       else{
         _ = TwitterClient.shareInstance?.authenticateSuccess(isSuccess: true)
